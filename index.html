@@ -10,17 +10,17 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 <style>
   :root {
-    --bg: #0e1116;
-    --panel: #161b22;
-    --panel-2: #1c232d;
-    --line: #2a323d;
-    --ink: #e8edf3;
-    --ink-dim: #9aa7b5;
-    --ink-faint: #6b7887;
-    --accent: #e0a458;
-    --accent-soft: rgba(224,164,88,0.14);
+    --bg: #f7f5f0;
+    --panel: #ffffff;
+    --panel-2: #f2efe8;
+    --line: #e6e1d7;
+    --ink: #23262b;
+    --ink-dim: #5c6672;
+    --ink-faint: #8b93a0;
+    --accent: #cf8636;
+    --accent-soft: rgba(207,134,54,0.14);
     --radius: 14px;
-    --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    --shadow: 0 10px 30px rgba(40,40,55,0.10);
   }
   * { box-sizing: border-box; }
   html, body { height: 100%; margin: 0; }
@@ -75,7 +75,7 @@
     padding: 10px 12px;
     font-size: 12px;
     line-height: 1.5;
-    color: #f0d9b6;
+    color: #7a5220;
   }
   .sample-flag b { color: var(--accent); }
 
@@ -195,7 +195,7 @@
   }
 
   /* ---------- Map ---------- */
-  #map { height: 100%; width: 100%; background: #0b0e12; }
+  #map { height: 100%; width: 100%; background: #e8e4db; }
   .leaflet-container { font-family: 'Inter', sans-serif; }
 
   .num-marker {
@@ -326,7 +326,7 @@ const routeLayers = [];
 const map = L.map('map', { zoomControl: true, attributionControl: true });
 L.control.zoom({ position: 'bottomright' }).addTo(map);
 map.zoomControl && map.removeControl(map.zoomControl);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; OpenStreetMap &copy; CARTO',
   maxZoom: 19,
 }).addTo(map);
